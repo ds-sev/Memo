@@ -1,0 +1,52 @@
+.tile {
+  width: 100%;
+  height: 100%;
+}
+
+.tile__container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  opacity: 1;
+  transition: transform 0.8s, opacity .6s;
+}
+
+.tile__container_flipped {
+  transform: rotateY(180deg);
+}
+
+.tile__container_hidden {
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+.tile__front-side, .tile__back-side {
+  border-radius: 6px;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.tile__front-side {
+  background: url('./../../assets/images/green-goblin.png') center;
+  background-size: cover;
+  backface-visibility: hidden;
+  transition: box-shadow .2s;
+}
+
+.tile__front-side:hover {
+  cursor: pointer;
+  box-shadow: 0 0 4px 6px rgba(238, 130, 238, 0.35);
+  transition: box-shadow .2s;
+}
+
+.tile__back-side {
+  background-size: cover!important;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
