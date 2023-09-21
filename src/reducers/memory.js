@@ -4,15 +4,16 @@ const initialState = {
   round: 1,
   firstTile: null,
   secondTile: null,
-  tiles: initialTiles
+  pairsRevealed: 0,
+  tiles: initialTiles()
 }
-
 export default function memory(state = initialState, action) {
   switch (action.type) {
-    case 'FLIP_TILE':
-      let newState = { round: state.round + 1 }
+    case 'FLIP_TILE': {
 
-      if (state.round % 2 == 1) {
+      let newState = { round: state.round + 1, pairsRevealed: state.pairsRevealed }
+
+      if (state.round % 2 === 1) {
         let tileClicked = state.tiles.find((tile) => {
           return tile.id === action.id
         })
@@ -33,7 +34,9 @@ export default function memory(state = initialState, action) {
         })
 
         if (tileClicked.rel === state.firstTile) {
+
           Object.assign(newState, {
+            pairsRevealed: state.pairsRevealed + 1,
             firstTile: state.firstTile,
             secondTile: tileClicked.rel,
             tiles: state.tiles.map((tile) => {
@@ -57,10 +60,19 @@ export default function memory(state = initialState, action) {
             })
           })
         }
+      }
+      return newState
+    }
 
+    case 'RESTART':
+      return {
+        round: 1,
+        firstTile: null,
+        secondTile: null,
+        pairsRevealed: 0,
+        tiles: initialTiles()
       }
 
-      return newState
     default:
       return state
 

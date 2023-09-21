@@ -2,13 +2,18 @@ import './Tile.css'
 
 function Tile({ tileData, flipTile }) {
 
-  return (
-    <div role="presentation"
-         className={`tile ${tileData.flipped && 'tile_opened'}`}
-         onClick={() => flipTile(tileData.id)}>
-      {tileData.meaning}
-    </div>
+  const tileImage = {
+    background: `url(${tileData.url}) center no-repeat`
+  }
 
+  return (
+    <div className="tile">
+      <div className={`tile__container ${(tileData.flipped) && 'tile__container_flipped'}
+                                       ${tileData.discovered && 'tile__container_hidden'}`}>
+        <div style={tileImage} className="tile__back-side" />
+        <div className="tile__front-side" onClick={() => flipTile(tileData.id)} />
+      </div>
+    </div>
   )
 }
 

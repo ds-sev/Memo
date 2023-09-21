@@ -1,52 +1,28 @@
-export const initialTiles = [
-  {
-    id: 1,
-    meaning: 'A',
-    flipped: false,
-    discovered : false
-  },
-  {
-    id: 2,
-    meaning: 'B',
-    flipped: false,
-    discovered : false
-  },
-  {
-    id: 3,
-    meaning: 'C',
-    flipped: false,
-    discovered : false
-  },
-  {
-    id: 4,
-    meaning: 'D',
-    flipped: false,
-    discovered : false
-  },
-  {
-    id: 5,
-    meaning: 'E',
-    flipped: false,
-    discovered : false
-  },
-  {
-    id: 6,
-    meaning: 'F',
-    flipped: false,
-    discovered : false
-  },
-  {
-    id: 7,
-    meaning: 'G',
-    flipped: false,
-    discovered : false
-  },
-  {
-    id: 8,
-    meaning: 'I',
-    flipped: false,
-    discovered : false
+import { shuffle } from './shuffle.js'
+
+const initialTiles = () => {
+  let tiles = []
+
+  for (let i = 0; i < 16; i += 2) {
+    let index = Math.floor(Math.random() * 1000)
+
+    tiles.push({
+      id: i,
+      rel: i + 1,
+      flipped: false,
+      url: `https://loremflickr.com/320/240/paris,brazil,rio?random=${index}`,
+      discovered: false
+    })
+
+    tiles.push({
+      id: i + 1,
+      rel: i,
+      flipped: false,
+      url: `https://loremflickr.com/320/240/paris,brazil,rio?random=${index}`,
+      discovered: false
+    })
   }
-]
+  return shuffle(tiles)
+}
 
 export default initialTiles
