@@ -9,7 +9,7 @@ html {
   min-width: 320px;
   height: 100%;
   background: linear-gradient(black, transparent, black),
-  url('./images/chalkboard.jpg') center;
+  url('./assets/images/chalkboard.jpg') center;
   font-family: 'Arial', sans-serif;
   font-size: 16px;
 }

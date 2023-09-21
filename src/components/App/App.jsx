@@ -3,10 +3,10 @@ import Tile from '../Tile/Tile.jsx'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import MemoryActions from '../../actions/MemoryActions.js'
-import Header from '../Header/header.jsx'
+import Header from '../Header/Header.jsx'
+import Footer from '../Footer/Footer.jsx'
 
 function App(props) {
-
   return (
     <>
       <Header restart={props.actions.restart}
@@ -28,6 +28,7 @@ function App(props) {
           )
         }
       </main>
+      <Footer />
     </>
   )
 }

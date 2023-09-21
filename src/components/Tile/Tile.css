@@ -33,7 +33,7 @@
 }
 
 .tile__front-side {
-  background: url('../../images/green-goblin.png') center;
+  background: url('./../../assets/images/green-goblin.png') center;
   background-size: cover;
   backface-visibility: hidden;
   transition: box-shadow .2s;
