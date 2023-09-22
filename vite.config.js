@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [
     react(),
     legacy({
-      targets: ['ie >= 10'],
+      targets: ['ie >= 9'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime', 'core-js/modules/es.promise.js'],
       polyfills: ['es.array.iterator', 'es.promise.finally', 'es/map', 'es/set']
     })
