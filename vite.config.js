@@ -9,12 +9,12 @@ export default defineConfig({
   plugins: [
     react(),
     legacy({
-      targets: ['ie >= 9'],
+      targets: ['ie >= 11'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime', 'core-js/modules/es.promise.js'],
       polyfills: ['es.array.iterator']
     })
   ],
-  base: '/',
+  base: './',
   css: {
     postcss: {
       plugins: [

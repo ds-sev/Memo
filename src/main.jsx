@@ -1,6 +1,7 @@
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-
 import { store } from './store/configureStore'
 import App from './components/App/App.jsx'
 import './index.css'
