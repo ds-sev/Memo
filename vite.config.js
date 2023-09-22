@@ -11,7 +11,7 @@ export default defineConfig({
     legacy({
       targets: ['ie >= 9'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime', 'core-js/modules/es.promise.js'],
-      polyfills: ['es.array.iterator', 'es.promise.finally', 'es/map', 'es/set']
+      polyfills: ['es.array.iterator']
     })
   ],
   base: './',

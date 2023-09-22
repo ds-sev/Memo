@@ -5,8 +5,7 @@ import { store } from './store/configureStore'
 import App from './components/App/App.jsx'
 import './index.css'
 import { Provider } from 'react-redux'
-import 'react-app-polyfill/ie9'
-import 'react-app-polyfill/stable'
+import 'promise-polyfill/src/polyfill';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
