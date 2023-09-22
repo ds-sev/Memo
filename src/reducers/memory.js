@@ -1,4 +1,4 @@
-import initialTiles from '../utils/initialTiles.js'
+import initialTiles from './../utils/initialTiles.js'
 
 const initialState = {
   round: 1,
