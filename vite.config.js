@@ -8,7 +8,8 @@ export default defineConfig({
   plugins: [
     react(),
     legacy({
-      targets: ['IE >= 10']
+      targets: ['IE >= 10'],
+      renderModernChunks: false
     })
   ],
   base: './',
