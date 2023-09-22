@@ -8,8 +8,9 @@ export default defineConfig({
   plugins: [
     react(),
     legacy({
-      targets: ['IE >= 10'],
-      renderModernChunks: false
+      targets: ['ie >= 10'],
+      additionalLegacyPolyfills: ["regenerator-runtime/runtime"],
+      polyfills: ["es.array.iterator"],
     })
   ],
   base: './',
