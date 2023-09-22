@@ -14,7 +14,7 @@ export default defineConfig({
       polyfills: ['es.array.iterator']
     })
   ],
-  base: './',
+  base: '/',
   css: {
     postcss: {
       plugins: [
