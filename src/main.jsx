@@ -1,3 +1,4 @@
+import 'promise-polyfill/src/polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { store } from './store/configureStore'
