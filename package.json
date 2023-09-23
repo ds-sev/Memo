@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-legacy": "^4.1.1",
+    "core-js": "^3.32.2",
     "promise-polyfill": "8.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,5 +32,7 @@
     "vite": "^4.4.5",
     "whatwg-fetch": "^3.6.19"
   },
-  "browserslist": ["IE >= 10"]
+  "browserslist": [
+    "IE >= 10"
+  ]
 }
