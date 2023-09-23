@@ -8,7 +8,7 @@ import Footer from './../Footer/Footer.jsx'
 
 function App(props) {
   return (
-    <>
+    <div>
       <Header restart={props.actions.restart}
               revealed={props.memory.pairsRevealed}
               score={props.memory.round} />
@@ -29,7 +29,7 @@ function App(props) {
         }
       </main>
       <Footer />
-    </>
+    </div>
   )
 }
 
