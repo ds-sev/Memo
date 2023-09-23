@@ -8,9 +8,10 @@ export default defineConfig({
   plugins: [
     react(),
     legacy({
-      polyfills: ['es.promise.finally', 'es/map', 'es/set'],
-      additionalLegacyPolyfills: ['whatwg-fetch', 'regenerator-runtime/runtime', 'core-js/modules/es.promise.js'],
-      targets: ['defaults', 'IE > 9']
+      // polyfills: ['es/map', 'es/set'],
+      additionalLegacyPolyfills: ['whatwg-fetch', 'regenerator-runtime/runtime'],
+      polyfills: ["es.array.iterator"],
+      targets: ['defaults', 'IE >= 11']
     })
 
 
@@ -24,5 +25,5 @@ export default defineConfig({
     //   additionalLegacyPolyfills: ['whatwg-fetch', 'regenerator-runtime/runtime', 'core-js/modules/es.promise.js'],
     //   polyfills: ['es.array.iterator', 'es/map', 'es/set', 'es/promise', 'es/array', 'es/function', 'es/math', 'es/object', 'es/symbol']
     // })
-  ],
+  ]
 })
