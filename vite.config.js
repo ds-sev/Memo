@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [react(),
     legacy({
       targets: ['defaults', 'ie >= 10'],
-      additionalLegacyPolyfills: ['whatwg-fetch']
+      additionalLegacyPolyfills: ['whatwg-fetch', 'regenerator-runtime/runtime', 'core-js/modules/es.promise.js']
     })
     // legacy({
     //   targets: ['defaults', 'IE >= 10'],
