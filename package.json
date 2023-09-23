@@ -29,5 +29,5 @@
     "vite": "^4.4.5",
     "whatwg-fetch": "^3.6.19"
   },
-  "browserslist": ["defaults", "IE >= 10"]
+  "browserslist": ["IE >= 10"]
 }

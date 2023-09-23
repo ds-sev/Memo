@@ -7,8 +7,9 @@ export default defineConfig({
   plugins: [react(),
     legacy({
       targets: ['defaults', 'IE >= 10'],
-      additionalLegacyPolyfills: ['whatwg-fetch']
-    }),
+      additionalLegacyPolyfills: ['whatwg-fetch', 'regenerator-runtime/runtime'],
+      polyfills: ["es.array.iterator"],
+    })
   ],
-  base: './',
+  base: './'
 })
