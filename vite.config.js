@@ -8,6 +8,8 @@ export default defineConfig({
   plugins: [
     react(),
     legacy({
+      polyfills: ['es.promise.finally', 'es/map', 'es/set'],
+      modernPolyfills: ['es.promise.finally'],
       targets: ['defaults', 'IE > 9']
     })
 
