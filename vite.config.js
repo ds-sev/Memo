@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     legacy({
       polyfills: ['es.promise.finally', 'es/map', 'es/set'],
-      modernPolyfills: ['es.promise.finally'],
+      additionalLegacyPolyfills: ['whatwg-fetch', 'regenerator-runtime/runtime', 'core-js/modules/es.promise.js'],
       targets: ['defaults', 'IE > 9']
     })
 
