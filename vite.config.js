@@ -4,17 +4,12 @@ import legacy from '@vitejs/plugin-legacy'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
+  plugins: [react(),
     legacy({
-      targets: ['IE >= 10'],
-      additionalLegacyPolyfills: ['whatwg-fetch']
+      targets: ['defaults', 'IE >= 10'],
+      additionalLegacyPolyfills: ['whatwg-fetch', 'regenerator-runtime/runtime'],
+      polyfills: ["es.array.iterator"],
     })
-    // legacy({
-    //   targets: ['ie >= 11'],
-    //   additionalLegacyPolyfills: ['regenerator-runtime/runtime', 'core-js/modules/es.promise.js'],
-    //   polyfills: ['es.array.iterator']
-    // })
   ],
-  base: './',
+  base: './'
 })
