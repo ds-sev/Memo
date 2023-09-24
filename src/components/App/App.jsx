@@ -7,6 +7,7 @@ import Header from './../Header/Header.jsx'
 import Footer from './../Footer/Footer.jsx'
 
 function App(props) {
+
   return (
     <>
       <Header restart={props.actions.restart}
@@ -18,13 +19,19 @@ function App(props) {
             <ul className="main__tiles-container">
               {props.memory.tiles.map((tile, index) =>
                 <li key={index}>
-                  <Tile index={index} tileData={tile} flipTile={props.actions.flipTile} />
+                  <Tile index={index}
+                        tileData={tile}
+                        flipTile={props.actions.flipTile}
+                        revealed={props.memory.pairsRevealed} />
                 </li>
               )}
               )
             </ul>
           ) : (
-            <button className='main__button-play-again' onClick={() => props.actions.restart()}>Play Again?</button>
+            <button className="main__button-play-again"
+                    onClick={() => props.actions.restart()}>
+              Play Again?
+            </button>
           )
         }
       </main>

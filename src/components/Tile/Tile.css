@@ -17,9 +17,7 @@
 }
 
 .tile__container_hidden {
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .2s;
+  display: none;
 }
 
 .tile__front-side, .tile__back-side {
@@ -49,7 +47,7 @@
 }
 
 .tile__back-side {
-  background-size: cover!important;
+  background-size: cover !important;
   backface-visibility: hidden;
   transform: rotateY(180deg);
 }

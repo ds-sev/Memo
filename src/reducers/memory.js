@@ -1,11 +1,14 @@
-import initialTiles from './../utils/initialTiles.js'
+import createTilesArray from '../utils/createTilesArray.js'
+import { shuffle } from '../utils/shuffle.js'
+
+const shuffledTiles = shuffle(createTilesArray())
 
 const initialState = {
   round: 1,
   firstTile: null,
   secondTile: null,
   pairsRevealed: 0,
-  tiles: initialTiles()
+  tiles: shuffledTiles
 }
 export default function memory(state = initialState, action) {
   switch (action.type) {
@@ -34,12 +37,12 @@ export default function memory(state = initialState, action) {
         })
 
         if (tileClicked.rel === state.firstTile) {
-
           Object.assign(newState, {
             pairsRevealed: state.pairsRevealed + 1,
             firstTile: state.firstTile,
             secondTile: tileClicked.rel,
             tiles: state.tiles.map((tile) => {
+
               return (tile.id === action.id || tile.id === state.firstTile)
                 ?
                 Object.assign({}, tile, { flipped: true, discovered: true })
@@ -47,6 +50,7 @@ export default function memory(state = initialState, action) {
                 tile
             })
           })
+
         } else {
           Object.assign(newState, {
             firstTile: state.firstTile,
@@ -70,7 +74,7 @@ export default function memory(state = initialState, action) {
         firstTile: null,
         secondTile: null,
         pairsRevealed: 0,
-        tiles: initialTiles()
+        tiles: shuffledTiles
       }
 
     default:
