@@ -1,3 +1,6 @@
+import 'react-app-polyfill/ie11'
+import 'react-app-polyfill/stable'
+import 'fast-text-encoding'
 import './App.css'
 import Tile from './../Tile/Tile.jsx'
 import { connect } from 'react-redux'
