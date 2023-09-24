@@ -1,35 +1,35 @@
 import './App.css'
 import Tile from './../Tile/Tile.jsx'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import MemoryActions from './../../actions/MemoryActions.js'
 import Header from './../Header/Header.jsx'
 import Footer from './../Footer/Footer.jsx'
+import mapStateToProps from '../../redux/selectors/mapStateToProps.js'
+import mapDispatchToProps from '../../redux/selectors/mapDispatchToProps.js'
+import PropTypes from 'prop-types'
 
-function App(props) {
-
+function App({ memory, actions }) {
   return (
     <>
-      <Header restart={props.actions.restart}
-              revealed={props.memory.pairsRevealed}
-              score={props.memory.round} />
+      <Header restart={actions.restart}
+              revealed={memory.pairsRevealed}
+              score={memory.round} />
       <main className="main">
-        {props.memory.pairsRevealed < 8
+        {memory.pairsRevealed < 8
           ? (
             <ul className="main__tiles-container">
-              {props.memory.tiles.map((tile, index) =>
+              {memory.tiles.map((tile, index) =>
                 <li key={index}>
                   <Tile index={index}
                         tileData={tile}
-                        flipTile={props.actions.flipTile}
-                        revealed={props.memory.pairsRevealed} />
+                        flipTile={actions.flipTile}
+                        revealed={memory.pairsRevealed} />
                 </li>
               )}
               )
             </ul>
           ) : (
             <button className="main__button-play-again"
-                    onClick={() => props.actions.restart()}>
+                    onClick={() => actions.restart()}>
               Play Again?
             </button>
           )
@@ -40,19 +40,14 @@ function App(props) {
   )
 }
 
-const mapStateToProps = (state) => {
-  return {
-    memory: state.memory
-  }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    actions: bindActionCreators(MemoryActions, dispatch)
-  }
-}
-
-export default connect(
+const ConnectedApp = connect(
   mapStateToProps,
   mapDispatchToProps
 )(App)
+
+export default ConnectedApp
+
+App.propTypes = {
+  actions: PropTypes.object.isRequired,
+  memory: PropTypes.object.isRequired
+}

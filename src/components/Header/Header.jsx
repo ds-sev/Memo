@@ -1,4 +1,5 @@
 import './Header.css'
+import PropTypes from 'prop-types'
 
 function Header({ restart, score, revealed }) {
   return (
@@ -11,3 +12,9 @@ function Header({ restart, score, revealed }) {
 }
 
 export default Header
+
+Header.propTypes = {
+  restart: PropTypes.func,
+  score: PropTypes.number,
+  revealed: PropTypes.number
+}

@@ -1,4 +1,4 @@
-import createTilesArray from '../utils/createTilesArray.js'
+import createTilesArray from '../../utils/createTilesArray.js'
 
 const initialState = {
   round: 1,

@@ -1,5 +1,6 @@
 import './Tile.css'
 import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 
 function Tile({ tileData, flipTile, revealed }) {
 
@@ -10,7 +11,7 @@ function Tile({ tileData, flipTile, revealed }) {
       setTimeout(() => setIsPairRevealed(true), 800)
     }
     else setIsPairRevealed(false)
-  }, [revealed])
+  }, [revealed, tileData.discovered])
 
   const tileImage = {
     background: `url(${tileData.url}) center no-repeat`
@@ -28,3 +29,9 @@ function Tile({ tileData, flipTile, revealed }) {
 }
 
 export default Tile
+
+Tile.propTypes = {
+  tileData: PropTypes.object,
+  flipTile: PropTypes.func,
+  revealed: PropTypes.number
+}
