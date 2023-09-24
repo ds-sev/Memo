@@ -1,14 +1,11 @@
 import createTilesArray from '../utils/createTilesArray.js'
-import { shuffle } from '../utils/shuffle.js'
-
-const shuffledTiles = shuffle(createTilesArray())
 
 const initialState = {
   round: 1,
   firstTile: null,
   secondTile: null,
   pairsRevealed: 0,
-  tiles: shuffledTiles
+  tiles: createTilesArray()
 }
 export default function memory(state = initialState, action) {
   switch (action.type) {
@@ -74,7 +71,7 @@ export default function memory(state = initialState, action) {
         firstTile: null,
         secondTile: null,
         pairsRevealed: 0,
-        tiles: shuffledTiles
+        tiles: createTilesArray()
       }
 
     default:

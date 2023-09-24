@@ -1,3 +1,5 @@
+import { shuffle } from './shuffle.js'
+
 export default function createTilesArray() {
   let tiles = []
 
@@ -22,5 +24,5 @@ export default function createTilesArray() {
       discovered: false
     })
   }
-  return tiles
+  return shuffle(tiles)
 }

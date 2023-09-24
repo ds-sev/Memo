@@ -9,6 +9,7 @@ function Tile({ tileData, flipTile, revealed }) {
     if (tileData.discovered && revealed > 0) {
       setTimeout(() => setIsPairRevealed(true), 800)
     }
+    else setIsPairRevealed(false)
   }, [revealed])
 
   const tileImage = {
