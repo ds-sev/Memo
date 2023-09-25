@@ -33,7 +33,7 @@ This web-application is built with Vite + React. Redux was chosen for state mana
 ```
 git clone https://github.com/ds-sev/Memo.git
 ```
-  2. Navigate to the project directory: cd test-task-web-app.
+  2. Navigate to the project directory:
 ```
 cd Memo
 ```
