@@ -29,7 +29,7 @@ This web-application is built with Vite + React. Redux was chosen for state mana
 - Cross-browser compatibility
 
 ## Project setup
-  1. Clone this repository: .
+  1. Clone this repository:
 ```
 git clone https://github.com/ds-sev/Memo.git
 ```
